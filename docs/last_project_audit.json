@@ -1,0 +1,610 @@
+{
+  "checks": [
+    {
+      "check": "Required file: README.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: prompts/master_app_prompt.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/DEFINITION_OF_DONE.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/ANDROID_RELEASE_CHECKLIST.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/QUALITY_CHECKLIST.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/ACCEPTANCE_TEST_WORKFLOW.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/SAFE_TEMPLATE_UPDATES.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/TROUBLESHOOTING_HANDBOOK.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/create_app.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/architecture_audit.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/V4_0_MILESTONES_36_40.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/V4_0_QUALITY_QA_ENGINE.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/template_update_preview.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/template_sync.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/dependency_audit.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/quality_qa_engine.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: prompts/visual_app_generation_prompt.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/VISUAL_APP_GENERATION_WORKFLOW.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: templates/project_docs/UI_REFERENCE_INDEX.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: templates/project_docs/SCREEN_INVENTORY.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: templates/project_docs/PROGRESS_TRACKER.csv",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/VISUAL_REGRESSION_WORKFLOW.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/DEVICE_AND_ACCESSIBILITY_QA.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/CHANGE_IMPACT_AND_ROLLBACK.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/SAFE_AUTOMATION_AND_RELEASE_READINESS.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/DEVELOPER_DASHBOARD.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/RECOVERY_AND_BACKUP_WORKFLOW.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/OFFLINE_AND_FAILURE_STATE_TESTING.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/REUSABLE_FEATURE_RECIPES.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/ASSET_LICENSE_INVENTORY.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/project_dashboard.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/visual_qa_report.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/release_preflight.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: templates/project_docs/DEVICE_TEST_MATRIX.csv",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: templates/project_docs/APP_CONFIG.yaml",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: templates/project_docs/APP_CONFIG.json",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: templates/project_docs/ASSET_LICENSE_INVENTORY.csv",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/validate_app_config.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/validate_project_registry.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/asset_license_report.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/screenshot_compare.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: tests/test_factory_tools.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/V2_2_UPGRADE.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/validate_flutter_project.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/run_factory_checks.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/V2_3_UPGRADE.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/V2_4_UPGRADE.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/V2_5_UPGRADE.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/FACTORY_UPGRADE_ROADMAP.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/V3_0_BUILD_ENGINE.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/V3_0_ROADMAP.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/app_generation_controller.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: templates/project_docs/APP_BRIEF.json",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/V3_0_APP_GENERATION_CONTROLLER.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/V3_0_MILESTONE_2_ACCEPTANCE.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/visual_qa_runner.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: templates/project_docs/VISUAL_QA_MANIFEST.json",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/V3_0_VISUAL_QA.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/V3_0_VISUAL_QA_MANIFEST_GUIDE.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/flutter_build_engine.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/feature_module_manager.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: templates/feature_modules/catalog.json",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: templates/project_docs/FEATURE_MODULES.json",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/install_runtime_kit.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: templates/flutter_runtime_kit/lib/app_runtime_kit.dart",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/V3_0_MILESTONE_5_RUNTIME_KIT.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/dependency_compatibility_review.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/change_impact_report.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/release_readiness_preflight.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/V3_0_MILESTONE_6_QUALITY_AUTOMATION.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: templates/project_docs/QUALITY_AUTOMATION_MANIFEST.json",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/multi_app_control_center.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/V3_0_MILESTONE_7_MULTI_APP_CONTROL_CENTER.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: apps/PROJECT_REGISTRY.csv",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/batch_build_pipeline.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/V3_0_MILESTONE_8_BATCH_BUILD_PIPELINE.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/release_artifact_manager.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/V3_0_MILESTONE_9_RELEASE_ARTIFACT_MANAGER.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/release_readiness_dashboard.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/V3_0_MILESTONE_10_RELEASE_READINESS_DASHBOARD.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/device_qa_orchestrator.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/V3_0_MILESTONE_11_DEVICE_QA_ORCHESTRATOR.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/app_creation_wizard.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/V3_0_MILESTONE_12_APP_CREATION_WIZARD.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/one_command_app_workflow.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/ui_screen_generator.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/V3_0_MILESTONE_14_UI_SCREEN_GENERATOR.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/V3_0_MILESTONE_13_ONE_COMMAND_WORKFLOW.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/V3_0_MILESTONE_14_UI_SCREEN_GENERATOR.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/advanced_milestone_engine.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/V3_5_FINAL_MILESTONES_15_35.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/V3_5_FINAL_VERIFICATION.md",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: docs/V3_5_FINAL_VERIFICATION.json",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/milestone_15.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/milestone_16.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/milestone_17.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/milestone_18.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/milestone_19.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/milestone_20.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/milestone_21.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/milestone_22.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/milestone_23.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/milestone_24.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/milestone_25.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/milestone_26.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/milestone_27.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/milestone_28.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/milestone_29.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/milestone_30.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/milestone_31.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/milestone_32.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/milestone_33.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/milestone_34.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Required file: scripts/milestone_35.py",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Nova UI starter sync",
+      "status": "PASS",
+      "detail": "source=27 template=27"
+    },
+    {
+      "check": ".env.example placeholder scan",
+      "status": "PASS",
+      "detail": "No common secret pattern found; this is not a full secrets scan"
+    },
+    {
+      "check": "Git ignore file",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Safe Claude workflow guide",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Definition of Done",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Security/privacy audit guide",
+      "status": "PASS",
+      "detail": "Present"
+    },
+    {
+      "check": "Multi-app project registry guide",
+      "status": "PASS",
+      "detail": "Present"
+    }
+  ],
+  "structural_failures": false
+}

@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "project_path": "apps/your_app",
+  "checks": {
+    "dependency_review": true,
+    "change_impact": true,
+    "run_flutter_checks": false
+  },
+  "notes": "Example documentation manifest; current CLI tools take their own explicit arguments."
+}

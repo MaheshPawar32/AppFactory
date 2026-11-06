@@ -1,0 +1,9 @@
+test_id,profile,viewport_or_device,android_version,screen_size_px,density,text_scale,theme,locale,scenario,expected_result,evidence_path,status,notes
+DEV-001,compact_phone,record_actual_device,,,,1.0,light,en,launch_and_primary_flow,No overflow; primary flow usable,,NOT RUN,Replace profile with actual device details
+DEV-002,typical_phone,record_actual_device,,,,1.0,light,en,critical_user_journey,Journey completes as specified,,NOT RUN,
+DEV-003,large_screen,record_actual_device,,,,1.0,light,en,layout_and_navigation,Layout uses available space appropriately,,NOT RUN,Tablet/resizable if supported
+DEV-004,keyboard_open,record_actual_device,,,,1.0,light,en,form_keyboard_visible,Fields and submit action remain reachable,,NOT RUN,
+DEV-005,large_text,record_actual_device,,,,2.0,light,en,critical_screens,Content remains readable and usable,,NOT RUN,
+DEV-006,dark_theme,record_actual_device,,,,1.0,dark,en,critical_screens,Contrast and states remain clear,,NOT RUN,Only if dark theme is supported
+DEV-007,offline,record_actual_device,,,,1.0,light,en,offline_flow,Offline state is clear and recovery works,,NOT RUN,
+DEV-008,permission_denied,record_actual_device,,,,1.0,light,en,permission_flow,Denial is handled without crash,,NOT RUN,Only if permissions are used

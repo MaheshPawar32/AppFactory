@@ -1,0 +1,91 @@
+{
+  "schema_version": 2,
+  "app": {
+    "name": "REPLACE_WITH_APP_NAME",
+    "package_name": "com.dev.replace_with_project_name",
+    "version": "0.1.0+1",
+    "platform": "android",
+    "project_type": "new"
+  },
+  "architecture": {
+    "style": "layered",
+    "state_management": "Provider",
+    "routing": "RECORD_ACTUAL_ROUTER",
+    "storage": "RECORD_ACTUAL_STORAGE",
+    "layers": ["presentation", "application", "domain", "data"]
+  },
+  "integrations": {
+    "backend": "none",
+    "authentication": {"enabled": false, "provider": "none"},
+    "apis": [],
+    "notifications": {"enabled": false},
+    "analytics": {"enabled": false, "provider": "none"},
+    "crash_reporting": {"enabled": false, "provider": "none"},
+    "firebase_enabled": false,
+    "firebase_services": [],
+    "admob_enabled": false,
+    "admob_formats": []
+  },
+  "design": {
+    "system": "Nova UI",
+    "theme": "RECORD_THEME",
+    "locales": ["en"]
+  },
+  "branding": {
+    "primary_color": "#6366F1",
+    "launcher_icon": {"status": "NOT PROVIDED", "source": ""},
+    "splash_screen": {"status": "NOT PROVIDED", "source": ""},
+    "store_icon": {"status": "NOT PROVIDED", "source": ""}
+  },
+  "environments": {
+    "development": {"api_base_url": "", "required_variables": []},
+    "staging": {"api_base_url": "", "required_variables": []},
+    "production": {"api_base_url": "", "required_variables": []}
+  },
+  "feature_flags": {},
+  "privacy": {
+    "data_collection": "NOT REVIEWED",
+    "consent_required": "NOT REVIEWED",
+    "retention_policy": "NOT DEFINED"
+  },
+  "permissions": [],
+  "build": {
+    "android": {
+      "application_id": "com.dev.replace_with_project_name",
+      "min_sdk": "flutter.minSdkVersion",
+      "target_sdk": "flutter.targetSdkVersion",
+      "compile_sdk": "flutter.compileSdkVersion",
+      "gradle_flavors": ["development", "staging", "production"],
+      "kotlin_jvm_target": 17
+    }
+  },
+  "store": {
+    "title": "REPLACE_WITH_APP_NAME",
+    "short_description": "",
+    "full_description": "",
+    "assets": {
+      "icon": "NOT PROVIDED",
+      "feature_graphic": "NOT PROVIDED",
+      "phone_screenshots": "NOT CAPTURED"
+    }
+  },
+  "constraints": {
+    "preserve_existing_features": true,
+    "preserve_user_changes": true,
+    "never_invent_credentials": true
+  },
+  "quality": {
+    "analyzer_status": "NOT RUN",
+    "test_status": "NOT RUN",
+    "android_build_status": "NOT RUN",
+    "device_test_status": "NOT RUN"
+  },
+  "release": {
+    "signing": "NOT CONFIGURED",
+    "upload": "NOT AUTHORIZED",
+    "publish": "NOT AUTHORIZED",
+    "signing_configured": "NOT VERIFIED",
+    "store_compliance_review": "NOT RUN",
+    "asset_license_review": "NOT RUN"
+  }
+}

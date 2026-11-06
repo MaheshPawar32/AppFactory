@@ -1,0 +1,20 @@
+{
+  "app": {
+    "name": "My Example App",
+    "package_name": "com.dev.myexampleapp",
+    "platform": "android",
+    "project_type": "new",
+    "primary_goal": "Describe the main problem this app solves",
+    "target_users": ["Describe target users"],
+    "constraints": ["Preserve existing work", "Do not invent credentials"]
+  },
+  "screens": [
+    {"name": "Home", "purpose": "Primary user landing screen"}
+  ],
+  "integrations": [],
+  "design_references": [],
+  "acceptance_criteria": [
+    "Core user journey works",
+    "Loading, empty, error and offline states are handled"
+  ]
+}

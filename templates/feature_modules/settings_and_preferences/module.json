@@ -1,0 +1,24 @@
+{
+  "id": "settings_and_preferences",
+  "title": "Settings and preferences",
+  "purpose": "Provide a predictable place for theme, reminders, privacy, data management and app information.",
+  "dependencies": {
+    "required": [],
+    "optional": [
+      "shared_preferences"
+    ]
+  },
+  "choices": [
+    "theme",
+    "reminders",
+    "privacy",
+    "data_management",
+    "about"
+  ],
+  "acceptance": [
+    "Settings reflect actual app state and persist across restarts when appropriate.",
+    "Use accessible labels, confirmation for destructive actions, and a clear reset path.",
+    "Do not display settings for integrations that are not configured.",
+    "Test persistence, reset behavior, and permission-state changes."
+  ]
+}

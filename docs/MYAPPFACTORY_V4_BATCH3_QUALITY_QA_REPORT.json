@@ -1,0 +1,197 @@
+{
+  "report": "MyAppFactory V4.0 Batch 3 Quality, Testing and Compatibility",
+  "report_date": "2026-11-01",
+  "overall_status": "PARTIAL",
+  "overall_decision": "Quality QA workflow implemented and exercised; manual and security assurance work remains.",
+  "safety": {
+    "release_signing_behavior_changed": false,
+    "signing_keys_generated_or_exposed": false,
+    "application_uploaded_or_published": false,
+    "production_release_performed": false,
+    "existing_reports_backed_up_before_overwrite": true,
+    "qa_outputs_are_project_scoped": true,
+    "qa_report_overwrite_protection": "PASS"
+  },
+  "milestones": [
+    {
+      "milestone": 45,
+      "name": "Automated Testing Engine",
+      "status": "PARTIAL",
+      "implementation_status": "PASS",
+      "evidence": [
+        "Discovers unit/widget/API/offline/regression test suites by path and integration_test files.",
+        "Runs discovered suites only when --execute is explicitly supplied; integration tests require a selected Android device.",
+        "Aggregates results, preserves per-suite command logs, redacts environment secrets from output, and keeps missing suites NOT RUN.",
+        "QA engine executed 2 generated-sample Flutter test files successfully; both tests passed."
+      ],
+      "not_run": ["unit suite", "API suite", "offline suite", "regression suite", "integration suite"],
+      "limitations": [
+        "Test categories without matching files are intentionally NOT RUN, not PASS.",
+        "Integration test execution was not performed because the generated sample has no integration_test suite."
+      ]
+    },
+    {
+      "milestone": 46,
+      "name": "Android Device Compatibility QA",
+      "status": "PARTIAL",
+      "implementation_status": "PASS",
+      "evidence": [
+        "Reads minimum and target API levels from APK manifest metadata using Android aapt.",
+        "Discovered emulator-5554: Android 16 (API 36), Android arm64.",
+        "Generated sample APK manifest reported minSdk 24 and targetSdk 36.",
+        "Installed and launched the generated development app com.dev.batchthreeqa.dev; adb confirmed a live process and foreground activity.",
+        "Smoke-test safety refuses installation if the selected package is already installed or APK identity does not match the project."
+      ],
+      "screen_density_matrix": [
+        {"profile": "compact_phone", "status": "NOT RUN"},
+        {"profile": "typical_phone", "status": "NOT RUN"},
+        {"profile": "tablet", "status": "NOT RUN"}
+      ],
+      "permission_behavior": "NOT RUN",
+      "limitations": [
+        "Only one Android 16 emulator was available and smoke tested.",
+        "Compact phone, typical phone, tablet, alternate Android versions, screen densities, and permission scenarios remain untested.",
+        "The smoke-tested package remains installed on the emulator; the QA tool does not automatically uninstall it."
+      ]
+    },
+    {
+      "milestone": 47,
+      "name": "Accessibility and UX QA",
+      "status": "PARTIAL",
+      "implementation_status": "PASS",
+      "evidence": [
+        "Static heuristics report actionable interactive-control and gesture semantics findings with source file and line.",
+        "Flutter analyzer passed on canonical Nova UI and on generated sample.",
+        "Generated sample scan produced 11 review findings, which are heuristic review items, not confirmed accessibility defects."
+      ],
+      "contrast_review": "PARTIAL — named literal color pairs are measurable; no applicable pairs were found in the generated sample.",
+      "manual_reviews": [
+        {"check": "TalkBack/VoiceOver reading order and control names", "status": "NEEDS MANUAL VERIFICATION"},
+        {"check": "Text scaling at 1.3x and 2.0x; check clipping and overflow", "status": "NEEDS MANUAL VERIFICATION"},
+        {"check": "Keyboard/focus navigation and focus visibility", "status": "NEEDS MANUAL VERIFICATION"},
+        {"check": "Contrast measurement for actual rendered color pairs", "status": "NEEDS MANUAL VERIFICATION"},
+        {"check": "Touch target size and reduced-motion behavior", "status": "NEEDS MANUAL VERIFICATION"},
+        {"check": "Form error announcements and app-specific UX review", "status": "NEEDS MANUAL VERIFICATION"}
+      ],
+      "limitations": [
+        "Static source heuristics and flutter analyze do not establish accessibility conformance.",
+        "No formal accessibility certification or manual assistive-technology test was performed."
+      ]
+    },
+    {
+      "milestone": 48,
+      "name": "Performance and Stability",
+      "status": "PARTIAL",
+      "implementation_status": "PASS",
+      "evidence": [
+        "Generated-app Android profile APK build passed.",
+        "Measured profile APK size: 66741643 bytes (66.7 MB), SHA-256 1729da3f8f77efb876b7a9ba99c3414b4155505527301281808c6a7c285ce5df.",
+        "Android 16 emulator cold first-launch measurement recorded TotalTime 5217 ms and WaitTime 5231 ms; process and foreground activity were confirmed.",
+        "No per-app performance thresholds were configured, so the recorded measurements were not judged against a configured SLA."
+      ],
+      "not_run": [
+        "Flutter frame/raster profiling",
+        "Memory profiling",
+        "Crash log collection",
+        "Long-duration stability testing"
+      ],
+      "limitations": [
+        "Profile APK size is not installed-size evidence.",
+        "One emulator launch is not a representative performance benchmark."
+      ]
+    },
+    {
+      "milestone": 49,
+      "name": "Dependency, Vulnerability and License Audit",
+      "status": "PARTIAL",
+      "implementation_status": "PASS",
+      "evidence": [
+        "Canonical pubspec.lock inventory: 26 packages.",
+        "flutter pub deps --json completed successfully.",
+        "Android Gradle releaseRuntimeClasspath dependency inventory completed successfully after preserving Batch 2 release-signing protection.",
+        "CycloneDX 1.5 SBOM generated with 26 components at design_system/nova_ui_flutter/build/factory_quality_qa/20261101T065925-6ab3e630/bom.cdx.json."
+      ],
+      "license_review": {
+        "status": "PARTIAL",
+        "packages_with_unknown_license_evidence": 26,
+        "legal_approval": "NOT CLAIMED"
+      },
+      "vulnerability_scan": {
+        "status": "NOT RUN",
+        "scanners": ["osv-scanner", "trivy"],
+        "availability": "Neither scanner is installed in this environment; no CVE scan was performed."
+      },
+      "limitations": [
+        "Dependency and SBOM inventories are not vulnerability scans.",
+        "License-file presence or declared identifiers are not legal compatibility approval."
+      ]
+    }
+  ],
+  "validation": [
+    {"check": "python3 -m unittest discover -s tests -v", "status": "PASS", "evidence": "90 tests passed."},
+    {"check": "python3 -m py_compile scripts/*.py tests/test_factory_tools.py", "status": "PASS"},
+    {"check": "python3 scripts/check_template_sync.py", "status": "PASS", "evidence": "27 tracked files compared."},
+    {"check": "python3 scripts/template_update_preview.py", "status": "PASS", "evidence": "Read-only; no differences and no files changed."},
+    {"check": "python3 scripts/project_audit.py", "status": "PASS", "evidence": "Structural checks passed; manual and Flutter checks remain separate."},
+    {"check": "python3 scripts/run_factory_checks.py", "status": "PASS", "evidence": "All 10 consolidated checks passed, including the quality QA dry run."},
+    {"check": "Canonical Flutter analyze", "status": "PASS", "evidence": "No issues found."},
+    {"check": "Canonical Flutter test", "status": "PASS", "evidence": "2 tests passed."},
+    {"check": "Canonical Flutter debug APK", "status": "PASS", "evidence": "146077281 bytes; ZIP integrity passed; SHA-256 7c2232a666b152dd3029ad9e637a258a77c5cde2bf741f810a99d5fce661e85d."},
+    {"check": "Generated sample Flutter analyze", "status": "PASS", "evidence": "No issues found."},
+    {"check": "Generated sample Flutter tests", "status": "PASS", "evidence": "2 tests passed."},
+    {"check": "Generated sample development debug APK", "status": "PASS", "evidence": "146062478 bytes; ZIP integrity passed; SHA-256 f47b96cdb2ebce3e0921e6d7e0885ec2a919f15c1c6631a07ddf9818644fba5b."},
+    {"check": "Unsigned canonical release task", "status": "PASS", "evidence": "Safely refused because release signing is not configured; no release was produced."},
+    {"check": "Vulnerability/CVE scan", "status": "NOT RUN", "evidence": "No supported scanner installed."},
+    {"check": "Manual accessibility and multi-device QA", "status": "NEEDS MANUAL VERIFICATION"}
+  ],
+  "generated_sample": {
+    "status": "PASS",
+    "project_path": "/tmp/myappfactory-v4-batch3-final-sample-20261101",
+    "package": "com.dev.batchthreefinal",
+    "ignore_rules_and_metadata": "PASS",
+    "flutter_analyze": "PASS",
+    "flutter_tests": "PASS",
+    "debug_apk": "PASS",
+    "emulator_smoke_test": {
+      "status": "PASS",
+      "separate_smoke_fixture": "/tmp/myappfactory-v4-batch3-qa-sample-20261101",
+      "package": "com.dev.batchthreeqa.dev",
+      "device": "emulator-5554",
+      "android": "Android 16 (API 36)",
+      "installed_and_launched": true,
+      "foreground_process_verified": true
+    }
+  },
+  "manual_verification_required": [
+    "TalkBack/VoiceOver reading order and control naming.",
+    "Large text, overflow, contrast, keyboard focus, touch targets, and reduced motion.",
+    "Compact, typical, tablet, density, and additional Android API-level device matrix.",
+    "Permission behavior for app-specific flows.",
+    "Frame/memory profiling, crash capture, and sustained stability.",
+    "Human review of license compatibility and any future vulnerability scanner findings."
+  ],
+  "release_safety": {
+    "signing_guard_preserved": "PASS",
+    "real_signed_release": "NOT RUN",
+    "upload_or_publish": "NOT RUN",
+    "reason": "Batch 3 is QA-only. No release authorization or signing keys were provided."
+  },
+  "changed_files": [
+    "scripts/quality_qa_engine.py",
+    "scripts/project_audit.py",
+    "scripts/run_factory_checks.py",
+    "scripts/create_app.py",
+    "design_system/nova_ui_flutter/android/app/build.gradle.kts",
+    "tests/test_factory_tools.py",
+    "docs/ANDROID_RELEASE_CHECKLIST.md",
+    "docs/FACTORY_UPGRADE_ROADMAP.md",
+    "docs/V4_0_QUALITY_QA_ENGINE.md",
+    "docs/MYAPPFACTORY_V4_BATCH3_QUALITY_QA_REPORT.md",
+    "docs/MYAPPFACTORY_V4_BATCH3_QUALITY_QA_REPORT.json"
+  ],
+  "backups": [
+    "/tmp/last_factory_check_report.json.before-v4-batch3-20261101",
+    "/tmp/last_project_audit.json.before-v4-batch3-20261101"
+  ],
+  "next_milestone": "Stop after Batch 3 and obtain user review. Do not start V4 Batch 4."
+}

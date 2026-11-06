@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "app": {
+    "name": "Replace with app name",
+    "path": "apps/your_app"
+  },
+  "selected_modules": [
+    {
+      "id": "offline_storage",
+      "choice": "hive",
+      "status": "not configured"
+    },
+    {
+      "id": "settings_and_preferences",
+      "choice": "theme",
+      "status": "not configured"
+    }
+  ]
+}

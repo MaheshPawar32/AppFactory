@@ -1,0 +1,2 @@
+item_id,item_type,title,screen_or_feature,priority,status,owner,dependencies,acceptance_criteria,test_status,visual_qa_status,blocker,last_updated,evidence_path,notes
+SCR-001,screen,Example screen,Example feature,P0,PLANNED,,,,NOT RUN,NOT RUN,,, ,Example row only; replace or delete

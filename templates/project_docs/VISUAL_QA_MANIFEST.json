@@ -1,0 +1,12 @@
+{
+  "test_commands": [],
+  "screenshots": [
+    {"name": "home_default", "description": "Home screen in default state"},
+    {"name": "settings_default", "description": "Settings screen in default state"}
+  ],
+  "notes": [
+    "Launch the app and navigate to each named state manually before capture.",
+    "The runner captures the current device screen; it does not navigate or tap app controls.",
+    "Do not capture personal notifications, account details, access tokens or real user data."
+  ]
+}

@@ -1,0 +1,69 @@
+# Dart / Flutter
+.dart_tool/
+.packages
+.pub/
+**/build/
+build/
+.gradle/
+.flutter-plugins
+.flutter-plugins-dependencies
+coverage/
+**/local.properties
+local.properties
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# Local secrets and signing files
+.env
+.env.*
+!.env.example
+!.env.*.example
+key.properties
+**/key.properties
+*.jks
+**/*.jks
+*.keystore
+**/*.keystore
+*.p12
+*.pem
+*.key
+*.p8
+*.mobileprovision
+*.provisionprofile
+google-services.json
+GoogleService-Info.plist
+
+# iOS local/generated files
+ios/Flutter/.last_build_id
+ios/Flutter/Generated.xcconfig
+ios/Flutter/flutter_export_environment.sh
+ios/Flutter/ephemeral/
+ios/Pods/
+ios/.symlinks/
+ios/Runner.xcodeproj/xcuserdata/
+ios/Runner.xcworkspace/xcuserdata/
+**/DerivedData/
+*.xcuserstate
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+.history/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# MyAppFactory per-app state (secrets, approvals, reports) and file backups
+state/
+backups/
+sandbox/
+design_system/nova_ui_flutter_backup/
+design_system/*.zip
+*.zip

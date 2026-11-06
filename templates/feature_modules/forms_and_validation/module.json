@@ -1,0 +1,24 @@
+{
+  "id": "forms_and_validation",
+  "title": "Forms and validation",
+  "purpose": "Build accessible forms with inline validation, safe submission state and keyboard handling.",
+  "dependencies": {
+    "required": [],
+    "optional": [
+      "flutter_riverpod",
+      "provider",
+      "reactive_forms"
+    ]
+  },
+  "choices": [
+    "simple_form",
+    "multi_step_form",
+    "search_and_filter"
+  ],
+  "acceptance": [
+    "Use the existing state-management choice; do not introduce a second state-management framework.",
+    "Validate on submit and then provide helpful inline feedback.",
+    "Prevent duplicate submissions and preserve safe input when recoverable errors occur.",
+    "Test invalid, valid, keyboard, loading, server-error, and accessibility cases."
+  ]
+}

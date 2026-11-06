@@ -1,0 +1,22 @@
+{
+  "id": "onboarding",
+  "title": "First-run onboarding",
+  "purpose": "Explain the app value in a short, skippable first-run flow.",
+  "dependencies": {
+    "required": [],
+    "optional": [
+      "shared_preferences"
+    ]
+  },
+  "choices": [
+    "three_page_intro",
+    "permissions_education",
+    "quick_setup"
+  ],
+  "acceptance": [
+    "Allow skip/back and never trap users in onboarding.",
+    "Persist completion only after a valid finish or explicit skip.",
+    "Do not request sensitive permissions before explaining their value.",
+    "Add widget tests for first launch, completed launch, skip, and back navigation."
+  ]
+}

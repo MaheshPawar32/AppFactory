@@ -1,0 +1,91 @@
+{
+  "tool": "MyAppFactory consolidated checks",
+  "read_only": true,
+  "checks": [
+    {
+      "name": "Python unit tests",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 3.96,
+      "summary": "",
+      "stderr_tail": [
+        "",
+        "OK"
+      ]
+    },
+    {
+      "name": "App config validator",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 0.05,
+      "summary": "Schema sanity check only; it does not verify app code, credentials or integrations.",
+      "stderr_tail": []
+    },
+    {
+      "name": "Project registry validator",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 0.04,
+      "summary": "This validates registry consistency only; it does not run or verify project builds/tests.",
+      "stderr_tail": []
+    },
+    {
+      "name": "Asset license inventory report",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 0.04,
+      "summary": "This checks inventory completeness only; it does not determine whether a license is legally sufficient.",
+      "stderr_tail": []
+    },
+    {
+      "name": "Template sync",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 0.03,
+      "summary": "Template sync check PASSED (27 files compared)",
+      "stderr_tail": []
+    },
+    {
+      "name": "Template update preview",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 0.04,
+      "summary": "No files were changed. This preview is read-only.",
+      "stderr_tail": []
+    },
+    {
+      "name": "Project dashboard",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 0.04,
+      "summary": "}",
+      "stderr_tail": []
+    },
+    {
+      "name": "Visual QA report",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 0.04,
+      "summary": "This is not a visual regression pass/fail assessment.",
+      "stderr_tail": []
+    },
+    {
+      "name": "Project audit",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 0.03,
+      "summary": "Overall: STRUCTURAL CHECKS PASSED (manual and Flutter checks still required)",
+      "stderr_tail": []
+    },
+    {
+      "name": "V4 quality QA dry run",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 0.11,
+      "summary": "}",
+      "stderr_tail": []
+    }
+  ],
+  "passed": true,
+  "note": "These checks do not compile, analyze, test, or build any Flutter app. Run Flutter commands separately in each app."
+}

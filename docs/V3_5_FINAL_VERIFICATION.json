@@ -1,0 +1,19 @@
+{
+  "release": "MyAppFactory v3.5 final \u2014 milestones 1\u201335",
+  "milestones": 35,
+  "tests": {
+    "python_unittest": "51 passed",
+    "project_audit": "PASS",
+    "python_compile": "PASS",
+    "project_registry_validator": "PASS",
+    "app_config_validator": "NOT RUN: validator requires an explicit config path; startup warmup failed in environment"
+  },
+  "flutter_analyze": "NOT RUN: Flutter SDK/device environment unavailable",
+  "android_build": "NOT RUN: Flutter SDK/device environment unavailable",
+  "play_store_publish": "NOT RUN",
+  "notes": [
+    "Static and heuristic checks are not a substitute for manual review.",
+    "Milestone 17 creates scaffolds, not complete app business logic.",
+    "Milestones 22 and 31\u201332 prepare contracts/checklists; they do not connect credentials, sign, upload or publish."
+  ]
+}

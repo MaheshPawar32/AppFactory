@@ -1,0 +1,22 @@
+{
+  "id": "admob_optional",
+  "title": "Optional AdMob monetization",
+  "purpose": "Add ads only when monetization is explicitly selected and consent requirements are addressed.",
+  "dependencies": {
+    "required": [],
+    "optional": [
+      "google_mobile_ads"
+    ]
+  },
+  "choices": [
+    "banner",
+    "interstitial",
+    "rewarded"
+  ],
+  "acceptance": [
+    "Use Google test ad units during development; do not hardcode production IDs into shared templates.",
+    "Place ads without obstructing core actions or accidental clicks.",
+    "Implement applicable consent/privacy flows and age/audience requirements.",
+    "Test load failure, no-fill, offline behavior, lifecycle and ad-free core usability."
+  ]
+}

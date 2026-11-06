@@ -1,0 +1,141 @@
+name: Flutter CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Check formatting
+        run: dart format --set-exit-if-changed .
+
+      - name: Analyze
+        run: flutter analyze
+
+      - name: Test
+        run: flutter test
+
+      - name: Python script syntax check
+        run: python3 -m py_compile scripts/*.py
+
+      - name: Template update preview
+        run: python3 scripts/template_update_preview.py
+
+      - name: Template sync check
+        run: python3 scripts/check_template_sync.py
+
+      - name: Project audit
+        run: python3 scripts/project_audit.py
+
+      - name: Developer dashboard smoke test
+        run: python3 scripts/project_dashboard.py --json
+
+      - name: Visual QA report smoke test
+        run: python3 scripts/visual_qa_report.py
+
+      - name: Release preflight helper smoke test
+        run: python3 scripts/release_preflight.py design_system/nova_ui_flutter --json
+
+      - name: Python unit tests
+        run: python3 -m unittest discover -s tests -v
+
+      - name: App config validator smoke test
+        run: python3 scripts/validate_app_config.py templates/project_docs/APP_CONFIG.json
+
+      - name: Project registry validation
+        run: python3 scripts/validate_project_registry.py
+
+      - name: Asset license inventory report
+        run: python3 scripts/asset_license_report.py
+
+      - name: Screenshot comparison missing-input behavior
+        run: |
+          set +e
+          python3 scripts/screenshot_compare.py /missing/reference.png /missing/runtime.png --json
+          status=$?
+          set -e
+          test "$status" -eq 2
+
+      - name: Flutter project validator syntax check
+        run: python3 -m py_compile scripts/validate_flutter_project.py scripts/run_factory_checks.py
+
+      - name: Consolidated factory checks
+        run: python3 scripts/run_factory_checks.py --strict
+
+      - name: Build engine syntax check
+        run: python3 -m py_compile scripts/flutter_build_engine.py
+
+      - name: Build engine dry run
+        run: python3 scripts/flutter_build_engine.py design_system/nova_ui_flutter --dry-run --build apk
+
+      - name: App generation controller syntax check
+        run: python3 -m py_compile scripts/app_generation_controller.py
+
+      - name: App generation controller unit tests
+        run: python3 -m unittest discover -s tests -v
+
+      - name: Visual QA runner syntax check
+        run: python3 -m py_compile scripts/visual_qa_runner.py
+
+      - name: Check feature module manager
+        run: |
+          python -m py_compile scripts/feature_module_manager.py
+          python scripts/feature_module_manager.py list
+          python scripts/feature_module_manager.py validate templates/project_docs/FEATURE_MODULES.json
+
+      - name: Runtime kit installer syntax check
+        run: python3 -m py_compile scripts/install_runtime_kit.py
+
+      - name: Quality automation syntax and smoke checks
+        run: |
+          python3 -m py_compile scripts/dependency_compatibility_review.py scripts/change_impact_report.py scripts/release_readiness_preflight.py
+          python3 scripts/change_impact_report.py . --files pubspec.yaml lib/main.dart --json
+          python3 scripts/release_readiness_preflight.py design_system/nova_ui_flutter --json
+
+      - name: Multi-app control center smoke test
+        run: |
+          python3 -m py_compile scripts/multi_app_control_center.py
+          python3 scripts/multi_app_control_center.py --json
+          python3 scripts/multi_app_control_center.py --html /tmp/myappfactory-control-center.html
+
+      - name: Batch build pipeline dry-run smoke test
+        run: |
+          python3 -m py_compile scripts/batch_build_pipeline.py
+          python3 scripts/batch_build_pipeline.py --registry apps/PROJECT_REGISTRY.csv --output /tmp/batch-build-report.json
+
+      - name: Release artifact manager smoke test
+        run: |
+          python3 -m py_compile scripts/release_artifact_manager.py
+          python3 scripts/release_artifact_manager.py design_system/nova_ui_flutter --index /tmp/release-index.json
+
+      - name: Release readiness dashboard smoke test
+        run: |
+          python3 -m py_compile scripts/release_readiness_dashboard.py
+          python3 scripts/release_readiness_dashboard.py --json /tmp/release-readiness.json --html /tmp/release-readiness.html
+
+      - name: Device QA orchestrator dry-run smoke test
+        run: |
+          python3 -m py_compile scripts/device_qa_orchestrator.py
+          python3 scripts/device_qa_orchestrator.py --registry apps/PROJECT_REGISTRY.csv --output /tmp/device-qa-summary.json
+
+      - name: App creation wizard smoke test
+        run: |
+          python3 -m py_compile scripts/app_creation_wizard.py
+          python3 scripts/app_creation_wizard.py --name "CI Demo" --dry-run

@@ -1,0 +1,27 @@
+{
+  "id": "offline_storage",
+  "title": "Offline-first local storage",
+  "purpose": "Persist user-owned data on device with explicit schema/versioning and export/clear behavior.",
+  "dependencies": {
+    "required": [],
+    "optional": [
+      "hive",
+      "hive_flutter",
+      "shared_preferences",
+      "sqflite",
+      "isar"
+    ]
+  },
+  "choices": [
+    "hive",
+    "shared_preferences",
+    "sqflite",
+    "isar"
+  ],
+  "acceptance": [
+    "Choose one storage engine based on data shape; do not add multiple engines without justification.",
+    "Version and migrate persisted schemas; preserve existing user data.",
+    "Include empty/loading/error states and safe clear/export behavior where appropriate.",
+    "Test persistence across app restarts and malformed/old data recovery."
+  ]
+}

@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "modules": {
+    "offline_storage": {
+      "title": "Offline-first local storage",
+      "purpose": "Persist user-owned data on device with explicit schema/versioning and export/clear behavior.",
+      "dependencies": {
+        "required": [],
+        "optional": [
+          "hive",
+          "hive_flutter",
+          "shared_preferences",
+          "sqflite",
+          "isar"
+        ]
+      },
+      "choices": [
+        "hive",
+        "shared_preferences",
+        "sqflite",
+        "isar"
+      ],
+      "acceptance": [
+        "Choose one storage engine based on data shape; do not add multiple engines without justification.",
+        "Version and migrate persisted schemas; preserve existing user data.",
+        "Include empty/loading/error states and safe clear/export behavior where appropriate.",
+        "Test persistence across app restarts and malformed/old data recovery."
+      ]
+    },
+    "local_notifications": {
+      "title": "Local notifications",
+      "purpose": "Schedule on-device reminders with user controls and timezone-aware behavior.",
+      "dependencies": {
+        "required": [],
+        "optional": [
+          "flutter_local_notifications",
+          "timezone"
+        ]
+      },
+      "choices": [
+        "daily_reminders",
+        "scheduled_reminders",
+        "streak_reminders"
+      ],
+      "acceptance": [
+        "Ask notification permission contextually and respect denial without blocking the app.",
+        "Use stable notification IDs; cancel or reschedule obsolete reminders.",
+        "Handle Android notification channel and exact-alarm requirements only when needed.",
+        "Test permission denied, app restart, timezone/daylight changes, and duplicate scheduling."
+      ]
+    },
+    "onboarding": {
+      "title": "First-run onboarding",
+      "purpose": "Explain the app value in a short, skippable first-run flow.",
+      "dependencies": {
+        "required": [],
+        "optional": [
+          "shared_preferences"
+        ]
+      },
+      "choices": [
+        "three_page_intro",
+        "permissions_education",
+        "quick_setup"
+      ],
+      "acceptance": [
+        "Allow skip/back and never trap users in onboarding.",
+        "Persist completion only after a valid finish or explicit skip.",
+        "Do not request sensitive permissions before explaining their value.",
+        "Add widget tests for first launch, completed launch, skip, and back navigation."
+      ]
+    },
+    "settings_and_preferences": {
+      "title": "Settings and preferences",
+      "purpose": "Provide a predictable place for theme, reminders, privacy, data management and app information.",
+      "dependencies": {
+        "required": [],
+        "optional": [
+          "shared_preferences"
+        ]
+      },
+      "choices": [
+        "theme",
+        "reminders",
+        "privacy",
+        "data_management",
+        "about"
+      ],
+      "acceptance": [
+        "Settings reflect actual app state and persist across restarts when appropriate.",
+        "Use accessible labels, confirmation for destructive actions, and a clear reset path.",
+        "Do not display settings for integrations that are not configured.",
+        "Test persistence, reset behavior, and permission-state changes."
+      ]
+    },
+    "forms_and_validation": {
+      "title": "Forms and validation",
+      "purpose": "Build accessible forms with inline validation, safe submission state and keyboard handling.",
+      "dependencies": {
+        "required": [],
+        "optional": [
+          "flutter_riverpod",
+          "provider",
+          "reactive_forms"
+        ]
+      },
+      "choices": [
+        "simple_form",
+        "multi_step_form",
+        "search_and_filter"
+      ],
+      "acceptance": [
+        "Use the existing state-management choice; do not introduce a second state-management framework.",
+        "Validate on submit and then provide helpful inline feedback.",
+        "Prevent duplicate submissions and preserve safe input when recoverable errors occur.",
+        "Test invalid, valid, keyboard, loading, server-error, and accessibility cases."
+      ]
+    },
+    "api_client": {
+      "title": "HTTP API client",
+      "purpose": "Centralize request timeouts, JSON parsing, typed failures and safe retry policy.",
+      "dependencies": {
+        "required": [],
+        "optional": [
+          "http",
+          "dio"
+        ]
+      },
+      "choices": [
+        "http",
+        "dio"
+      ],
+      "acceptance": [
+        "Use the existing HTTP client if one already exists; otherwise choose one and document why.",
+        "Set connection/receive timeouts and map errors to user-safe messages.",
+        "Retry only safe/idempotent requests by default; never blindly retry writes.",
+        "Keep secrets out of the app bundle and logs; test timeout, offline, non-2xx and malformed JSON."
+      ]
+    },
+    "firebase_optional": {
+      "title": "Optional Firebase integration",
+      "purpose": "Scaffold only the explicitly selected Firebase services.",
+      "dependencies": {
+        "required": [],
+        "optional": [
+          "firebase_core",
+          "firebase_auth",
+          "cloud_firestore",
+          "firebase_crashlytics",
+          "firebase_analytics"
+        ]
+      },
+      "choices": [
+        "auth",
+        "firestore",
+        "crashlytics",
+        "analytics"
+      ],
+      "acceptance": [
+        "Confirm platform targets and services before adding dependencies.",
+        "Never invent google-services.json, GoogleService-Info.plist, API keys or project IDs.",
+        "Use least-privilege security rules and exclude PII/secrets from telemetry.",
+        "Mark each service NOT CONFIGURED until real project setup and runtime tests are evidenced."
+      ]
+    },
+    "admob_optional": {
+      "title": "Optional AdMob monetization",
+      "purpose": "Add ads only when monetization is explicitly selected and consent requirements are addressed.",
+      "dependencies": {
+        "required": [],
+        "optional": [
+          "google_mobile_ads"
+        ]
+      },
+      "choices": [
+        "banner",
+        "interstitial",
+        "rewarded"
+      ],
+      "acceptance": [
+        "Use Google test ad units during development; do not hardcode production IDs into shared templates.",
+        "Place ads without obstructing core actions or accidental clicks.",
+        "Implement applicable consent/privacy flows and age/audience requirements.",
+        "Test load failure, no-fill, offline behavior, lifecycle and ad-free core usability."
+      ]
+    }
+  }
+}
